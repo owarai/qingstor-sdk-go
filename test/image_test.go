@@ -60,7 +60,7 @@ func deleteImage(imageName string) error {
 		return errors.New("The bucket is not exist")
 	}
 
-	oOutput, err = bucket.DeleteObject(imageName)
+	oOutput, err = bucket.DeleteObject(imageName, nil)
 	if err != nil {
 		return err
 	}

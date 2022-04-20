@@ -569,8 +569,7 @@ func deleteObjectWithKey(objectKey string) error {
 				objectKey = objectKey[:1000]
 			}
 			deleteObjectOutput, err := bucket.DeleteObject(
-				fmt.Sprintf("%s-%d", objectKey, index),
-			)
+				fmt.Sprintf("%s-%d", objectKey, index), nil)
 			if err != nil {
 				errChan <- err
 				return
@@ -616,6 +615,7 @@ func deleteTheMoveObjectWithKey(objectKey string) error {
 			}
 			deleteTheMoveObjectOutput, err := bucket.DeleteObject(
 				fmt.Sprintf("%s-%d-move", objectKey, index),
+				nil,
 			)
 			if err != nil {
 				errChan <- err

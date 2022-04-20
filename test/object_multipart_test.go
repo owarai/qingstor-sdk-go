@@ -223,7 +223,7 @@ func abortMultipartUploadStatusCodeIs(statusCode int) error {
 var deleteTheMultipartObjectOutput *qs.DeleteObjectOutput
 
 func deleteTheMultipartObjectWithKey(objectKey string) error {
-	deleteTheMultipartObjectOutput, err = bucket.DeleteObject(objectKey)
+	deleteTheMultipartObjectOutput, err = bucket.DeleteObject(objectKey, nil)
 	return err
 }
 
